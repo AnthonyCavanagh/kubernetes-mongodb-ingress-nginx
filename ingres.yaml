@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: message-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /repohealth
+        pathType: Prefix
+        backend:
+          service:
+            name: message-svc
+            port: 
+              number: 80
+      - path: /health
+        pathType: Prefix
+        backend:
+          service:
+            name: message-svc
+            port: 
+              number: 80
+      - path: /alltransactions
+        pathType: Prefix
+        backend:
+          service:
+            name: message-svc
+            port: 
+              number: 80
+      - path: /transactions
+        pathType: Prefix
+        backend:
+          service:
+            name: message-svc
+            port: 
+              number: 80
